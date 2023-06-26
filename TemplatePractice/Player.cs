@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace TemplatePractice;
+﻿namespace TemplatePractice;
 
 internal class Player
 {
     public string Name { get; private set; }
 
-    public void NameHimSelf()
+    public void NameHimSelf(string name)
     {
-        Name = Console.ReadLine();
+        Name = name;
     }
 }

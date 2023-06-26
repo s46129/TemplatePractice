@@ -1,10 +1,20 @@
 ﻿namespace TemplatePractice.ShowDown;
 
-internal class ShowDownGame:GameFlow
+internal class ShowDownGame : GameFlow
 {
-    protected override void Start()
+    public override void Start()
     {
         base.Start();
+    }
+
+    protected override Player CreateHunamdPlayer()
+    {
+        return new ShowDownPlayer();
+    }
+
+    protected override Player CreateComputerPlayer()
+    {
+        return new ShowDownAiPlayer();
     }
 
     protected override void End()

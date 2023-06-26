@@ -7,6 +7,7 @@ namespace TemplatePractice
         public static void Main(string[] args)
         {
             var showDownGame = new ShowDownGame();
+            showDownGame.Start();
         }
     }
 }

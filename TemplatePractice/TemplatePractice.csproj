@@ -44,7 +44,9 @@
         <Compile Include="Player.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="ShowDown\ShowDownAiPlayer.cs" />
         <Compile Include="ShowDown\ShowDownGame.cs" />
+        <Compile Include="ShowDown\ShowDownPlayer.cs" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Uno\" />
