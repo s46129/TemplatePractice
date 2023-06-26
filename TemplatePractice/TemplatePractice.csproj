@@ -47,9 +47,9 @@
         <Compile Include="ShowDown\ShowDownAiPlayer.cs" />
         <Compile Include="ShowDown\ShowDownGame.cs" />
         <Compile Include="ShowDown\ShowDownPlayer.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Uno\" />
+        <Compile Include="Uno\UnoComputerPlayer.cs" />
+        <Compile Include="Uno\UnoGame.cs" />
+        <Compile Include="Uno\UnoHumanPlayer.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
