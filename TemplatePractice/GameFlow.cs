@@ -6,15 +6,17 @@ namespace TemplatePractice;
 
 internal abstract class GameFlow
 {
-    private List<Player> _players = new List<Player>();
+    private readonly List<Player> _players = new List<Player>();
 
     public virtual void Start()
     {
         AddPlayers();
-
-        Console.WriteLine($"Start {this.GetType().Name}");
-        Console.WriteLine("Players:\n" + string.Join("\n ", _players.Select(_ => _.Name)));
+        Deck deck = CreateDeck();
+        deck.Shuffle();
+        deck.Distribute(_players);
     }
+
+    protected abstract Deck CreateDeck();
 
     private void AddPlayers()
     {
@@ -22,6 +24,8 @@ internal abstract class GameFlow
         {
             AddPlayer(i);
         }
+        Console.WriteLine($"Start {GetType().Name}");
+        Console.WriteLine("Players:\n" + string.Join("\n ", _players.Select(_ => _.Name)));
     }
 
     private void AddPlayer(int i)
