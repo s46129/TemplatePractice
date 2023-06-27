@@ -1,4 +1,5 @@
-﻿using TemplatePractice.Uno;
+﻿using TemplatePractice.ShowDown;
+using TemplatePractice.Uno;
 
 namespace TemplatePractice
 {
@@ -6,7 +7,7 @@ namespace TemplatePractice
     {
         public static void Main(string[] args)
         {
-            var game = new UnoGame();
+            var game = new ShowDownGame();
             game.Start();
         }
     }

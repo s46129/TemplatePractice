@@ -22,6 +22,9 @@ internal class ShowDownDeck : Deck
 
     public override void Distribute(List<Player> players)
     {
-        throw new System.NotImplementedException();
+        for (var i = 0; i < Cards.Count; i++)
+        {
+            players[i % players.Count].Hand.AddCard(DrawCard());
+        }
     }
 }

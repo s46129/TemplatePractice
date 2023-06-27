@@ -10,12 +10,15 @@ internal abstract class Deck
 
     public void Shuffle()
     {
-        Console.WriteLine("-------Default------");
         var random = new Random();
-        Console.Write(string.Join(",", Cards.Select(_ => _.ToString())));
         Cards = Cards.OrderBy(_ => random.Next()).ToList();
-        Console.WriteLine("-------Shuffled------");
-        Console.Write(string.Join(",", Cards.Select(_ => _.ToString())));
+    }
+
+    public Card DrawCard()
+    {
+        var card = Cards[0];
+        Cards.Remove(card);
+        return card;
     }
 
     public abstract void Distribute(List<Player> players);

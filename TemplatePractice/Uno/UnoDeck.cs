@@ -21,5 +21,9 @@ internal class UnoDeck : Deck
 
     public override void Distribute(List<Player> players)
     {
+        for (var i = 0; i < 5; i++)
+        {
+            players.ForEach(_ => _.Hand.AddCard(DrawCard()));
+        }
     }
 }

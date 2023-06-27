@@ -4,7 +4,7 @@ internal abstract class Player
 {
     public string Name { get; private set; }
 
-    private Hand _hand = new Hand();
+    public readonly Hand Hand = new Hand();
 
     public void NameHimSelf(string name)
     {
