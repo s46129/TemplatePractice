@@ -6,7 +6,7 @@ namespace TemplatePractice;
 
 internal abstract class GameFlow
 {
-    private readonly List<Player> _players = new List<Player>();
+    protected readonly List<Player> _players = new List<Player>();
     protected Deck Deck;
 
     public virtual void Start()

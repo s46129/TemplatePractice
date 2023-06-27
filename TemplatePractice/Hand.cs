@@ -4,7 +4,7 @@ namespace TemplatePractice;
 
 internal class Hand
 {
-    private readonly List<Card> _cards = new List<Card>();
+    public readonly List<Card> _cards = new List<Card>();
 
     public void AddCard(Card card)
     {
