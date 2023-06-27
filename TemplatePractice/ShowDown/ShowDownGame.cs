@@ -7,6 +7,11 @@ internal class ShowDownGame : GameFlow
         base.Start();
     }
 
+    protected override Deck CreateDeck()
+    {
+        return new ShowDownDeck();
+    }
+
     protected override Player CreateHunamdPlayer()
     {
         return new ShowDownPlayer();
@@ -15,10 +20,5 @@ internal class ShowDownGame : GameFlow
     protected override Player CreateComputerPlayer()
     {
         return new ShowDownAiPlayer();
-    }
-
-    protected override void End()
-    {
-        base.End();
     }
 }
