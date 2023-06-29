@@ -6,8 +6,8 @@ namespace TemplatePractice;
 
 internal abstract class Deck
 {
-    protected List<Card> Cards;
-
+    public List<Card> Cards =new List<Card>();
+    
     public void Shuffle()
     {
         var random = new Random();
