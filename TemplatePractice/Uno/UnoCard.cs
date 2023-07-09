@@ -2,9 +2,9 @@
 
 public class UnoCard : Card
 {
-    public readonly int Number;
+    private readonly int Number;
 
-    public readonly Colors Color;
+    private readonly Colors Color;
 
     public UnoCard(Colors colors, int number)
     {
@@ -14,7 +14,9 @@ public class UnoCard : Card
 
     public override int CompareTo(Card other)
     {
-        throw new System.NotImplementedException();
+        //必須與檯面上最新的牌的顏色一樣，或是數字一樣。出完的牌就會成為檯面上最新的牌。
+        if (other is not UnoCard card) return -1;
+        return card.Color == Color || card.Number == Number ? 0 : -1;
     }
 
     public override string ToString()
