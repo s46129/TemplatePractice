@@ -8,7 +8,8 @@ internal class UnoDeck : Deck
     public UnoDeck()
     {
         Cards = new List<Card>();
-        foreach (var color in Enum.GetValues(typeof(UnoCard.Colors)))
+        var colors = Enum.GetValues(typeof(UnoCard.Colors));
+        foreach (var color in colors)
         {
             for (var i = 0; i < 9; i++)
             {
@@ -17,7 +18,6 @@ internal class UnoDeck : Deck
             }
         }
     }
-
 
     public override void Distribute(List<Player> players)
     {

@@ -27,12 +27,11 @@ internal class UnoGame : GameFlow
         {
             foreach (var player in Players)
             {
-                var showCard = player.ShowCard();
                 var hasValidCard = player.Hand._cards.Exists(_ => _.CompareTo(_tableCard) >= 0);
                 if (hasValidCard)
                 {
+                    var showCard = player.ShowCard();
                     var valid = showCard.CompareTo(_tableCard);
-
                     if (valid < 0)
                     {
                         Console.WriteLine("Invalid card");
@@ -40,13 +39,13 @@ internal class UnoGame : GameFlow
                     }
 
                     SetTableCard(showCard);
+                    player.Hand._cards.Remove(showCard);
                 }
                 else
                 {
                     if (Deck.Cards.Count == 0)
                     {
-                        Deck.Cards = _unusedCards;
-                        _unusedCards.Clear();
+                        OnDeckCardsIsEmpty();
                     }
 
                     player.Hand.AddCard(Deck.DrawCard());
@@ -61,6 +60,13 @@ internal class UnoGame : GameFlow
         } while (_winner == null);
 
         Console.WriteLine($"Winner is {_winner.Name}");
+    }
+
+    private void OnDeckCardsIsEmpty()
+    {
+        Deck.Cards = _unusedCards;
+        Deck.Shuffle();
+        _unusedCards.Clear();
     }
 
     private void SetTableCard(Card card)

@@ -16,14 +16,19 @@ internal class UnoHumanPlayer : Player
         var selectKey = Console.ReadLine();
         if (selectKey == null)
         {
+            Console.WriteLine("Input cannot be null.");
+            return ShowCard();
+        }
+        var tryParse = int.TryParse(selectKey, out var parse);
+        if (!tryParse)
+        {
             Console.WriteLine("Invalid Input");
             return ShowCard();
         }
 
-        var parse = int.Parse(selectKey);
         if (parse < 0 || parse > Hand._cards.Count)
         {
-            Console.WriteLine("Invalid Input");
+            Console.WriteLine("Input out of range.");
             return ShowCard();
         }
 

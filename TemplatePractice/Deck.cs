@@ -14,12 +14,12 @@ internal abstract class Deck
         Cards = Cards.OrderBy(_ => random.Next()).ToList();
     }
 
-    public Card DrawCard()
-    {
-        var card = Cards[0];
-        Cards.Remove(card);
-        return card;
-    }
+public Card DrawCard()
+{
+    var card = Cards.First();
+    Cards.RemoveAt(0);
+    return card;
+}
 
     public abstract void Distribute(List<Player> players);
 }
