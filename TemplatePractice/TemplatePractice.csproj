@@ -58,6 +58,9 @@
         <Compile Include="Uno\UnoGame.cs" />
         <Compile Include="Uno\UnoHumanPlayer.cs" />
     </ItemGroup>
+    <ItemGroup>
+      <Content Include="2.2.H_OOD.jpg" />
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
